@@ -29,62 +29,71 @@
             margin: 0;
             padding: 0;
             font-family: "Inter", sans-serif;
-            background: linear-gradient(135deg, #0e2233, #0d1b27);
+            background: radial-gradient(circle at top, #11324a, #0c1a28 60%, #091520);
             color: white;
         }
 
         header {
             text-align: center;
-            padding: 60px 20px 40px;
+            padding: 70px 20px 40px;
+        }
+
+        .logo {
+            width: 120px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 8px rgba(0,255,200,0.25));
         }
 
         header h1 {
-            font-size: 42px;
+            font-size: 46px;
             font-weight: 800;
             margin-bottom: 10px;
-            background: linear-gradient(90deg, #00c6ff, #00ffb2);
+            background: linear-gradient(90deg, #00eaff, #00ffbf);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         header p {
-            font-size: 18px;
+            font-size: 20px;
             opacity: 0.85;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 40px 25px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 14px;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 0 40px rgba(0, 0, 0, 0.35);
+            padding: 45px 30px;
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 18px;
+            backdrop-filter: blur(14px);
+            box-shadow: 0 0 45px rgba(0, 0, 0, 0.45);
         }
 
         .features {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 25px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
             margin-top: 40px;
         }
 
         .feature-box {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 25px;
-            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.09);
+            padding: 30px 20px;
+            border-radius: 14px;
             text-align: center;
             transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .feature-box:hover {
             background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-5px);
+            transform: translateY(-6px);
+            border-color: rgba(255,255,255,0.25);
         }
 
         .feature-box h3 {
             font-size: 22px;
             margin-bottom: 10px;
+            color: #00eaff;
         }
 
         .feature-box p {
@@ -94,32 +103,33 @@
 
         .cta-section {
             text-align: center;
-            margin-top: 50px;
+            margin-top: 55px;
         }
 
         .cta-btn {
             display: inline-block;
-            padding: 16px 36px;
-            font-size: 20px;
-            font-weight: 600;
+            padding: 18px 42px;
+            font-size: 22px;
+            font-weight: 700;
             color: #fff;
-            background: #229ED9;
+            background: linear-gradient(90deg, #229ED9, #1bb4ff);
             border-radius: 50px;
             cursor: pointer;
             text-decoration: none;
             transition: 0.3s;
+            box-shadow: 0 0 15px rgba(34,158,217,0.5);
         }
 
         .cta-btn:hover {
-            background: #1b89c0;
-            transform: scale(1.03);
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(34,158,217,0.75);
         }
 
         footer {
             text-align: center;
             opacity: 0.6;
             margin-top: 60px;
-            padding-bottom: 30px;
+            padding-bottom: 40px;
             font-size: 14px;
         }
 
@@ -130,16 +140,20 @@
             header h1 {
                 font-size: 34px;
             }
+            .cta-btn {
+                font-size: 20px;
+                padding: 16px 32px;
+            }
         }
     </style>
 </head>
 <body>
 
 <header>
+    <img src="https://market-qx.trade/site/img/quotex_logo.svg" class="logo" alt="Quotex Logo" />
     <h1>Join Our Telegram Channel</h1>
-    <p>Daily Compounding, Software signal, Live Signal, Join Our Telegram Now</p>
+    <p>Daily Compounding • Software Signals • Live Trading Alerts</p>
 </header>
-
     <div class="cta-section">
         <a 
             href="https://t.me/+jHnGT_iX69UxNjY1" 
@@ -148,6 +162,24 @@
             Join on Telegram
         </a>
     </div>
+<div class="container">
+
+
+    <div class="features">
+        <div class="feature-box">
+            <h3>Daily Profits</h3>
+            <p>High-quality signals designed for daily compounding growth.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Software Signals</h3>
+            <p>Advanced AI-based trading signals for fast and accurate results.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Live Alerts</h3>
+            <p>Get instant signal notifications directly on Telegram.</p>
+        </div>
+    </div>
+
 </div>
 
 <footer>
@@ -156,7 +188,7 @@
 
 <script>
     function trackJoin() {
-        fbq('track', 'Subscribe'); // fires subscribe event
+        fbq('track', 'Subscribe');
     }
 </script>
 
