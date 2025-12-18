@@ -1,195 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Join Our Telegram Channel</title>
-
-    <!-- Meta Pixel Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Channel</title>
+    
+    <!-- 1. FACEBOOK PIXEL CODE (Your ID: 800558836323410) -->
     <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '800558836323410');
-        fbq('track', 'PageView');
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    fbq('init', '800558836323410'); 
+    fbq('track', 'PageView');
     </script>
-    <noscript>
-        <img height="1" width="1" style="display:none"
-             src="https://www.facebook.com/tr?id=800558836323410&ev=PageView&noscript=1"/>
-    </noscript>
-    <!-- End Meta Pixel Code -->
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=800558836323410&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- END PIXEL CODE -->
 
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: "Inter", sans-serif;
-            background: radial-gradient(circle at top, #11324a, #0c1a28 60%, #091520);
-            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
-
-        header {
-            text-align: center;
-            padding: 70px 20px 40px;
-        }
-
-        .logo {
-            width: 120px;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 8px rgba(0,255,200,0.25));
-        }
-
-        header h1 {
-            font-size: 46px;
-            font-weight: 800;
-            margin-bottom: 10px;
-            background: linear-gradient(90deg, #00eaff, #00ffbf);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        header p {
-            font-size: 20px;
-            opacity: 0.85;
-        }
-
         .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 45px 30px;
-            background: rgba(255, 255, 255, 0.07);
-            border-radius: 18px;
-            backdrop-filter: blur(14px);
-            box-shadow: 0 0 45px rgba(0, 0, 0, 0.45);
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-            margin-top: 40px;
-        }
-
-        .feature-box {
-            background: rgba(255, 255, 255, 0.09);
-            padding: 30px 20px;
-            border-radius: 14px;
+            background: white;
+            max-width: 400px;
+            width: 90%;
+            padding: 40px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             text-align: center;
-            transition: 0.3s;
-            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        /* Flag Icon Style */
+        .flag-icon {
+            font-size: 60px; /* Big Flag */
+            margin-bottom: 15px;
+            display: block;
+            line-height: 1;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
         }
 
-        .feature-box:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-6px);
-            border-color: rgba(255,255,255,0.25);
-        }
-
-        .feature-box h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #00eaff;
-        }
-
-        .feature-box p {
-            font-size: 15px;
-            opacity: 0.85;
-        }
-
-        .cta-section {
-            text-align: center;
-            margin-top: 55px;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            padding: 18px 42px;
-            font-size: 22px;
+        h1 {
+            color: #222;
+            font-size: 24px;
+            margin-bottom: 15px;
+            line-height: 1.3;
             font-weight: 700;
-            color: #fff;
-            background: linear-gradient(90deg, #229ED9, #1bb4ff);
-            border-radius: 50px;
-            cursor: pointer;
+        }
+        p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+        .benefits {
+            text-align: left;
+            margin-bottom: 30px;
+            padding-left: 10px;
+        }
+        .benefits li {
+            margin-bottom: 12px;
+            color: #444;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+        }
+        .benefits li:before {
+            content: '✅';
+            margin-right: 12px;
+            font-size: 1.2em;
+        }
+        .btn {
+            background-color: #0088cc;
+            color: white;
+            padding: 18px 25px;
             text-decoration: none;
-            transition: 0.3s;
-            box-shadow: 0 0 15px rgba(34,158,217,0.5);
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 136, 204, 0.3);
+            transition: transform 0.1s, background-color 0.2s;
         }
-
-        .cta-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(34,158,217,0.75);
+        .btn:hover {
+            background-color: #0077b5;
         }
-
-        footer {
-            text-align: center;
-            opacity: 0.6;
-            margin-top: 60px;
-            padding-bottom: 40px;
-            font-size: 14px;
+        .btn:active {
+            transform: scale(0.98);
         }
-
-        @media (max-width: 768px) {
-            .features {
-                grid-template-columns: 1fr;
-            }
-            header h1 {
-                font-size: 34px;
-            }
-            .cta-btn {
-                font-size: 20px;
-                padding: 16px 32px;
-            }
+        .footer {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+        
+        /* Urdu / RTL Support */
+        .rtl {
+            direction: rtl;
+            font-family: 'Tahoma', 'Arial', sans-serif;
+        }
+        .rtl .benefits {
+            text-align: right;
+            padding-right: 10px;
+            padding-left: 0;
+        }
+        .rtl .benefits li:before {
+            margin-right: 0;
+            margin-left: 12px;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <img src="https://market-qx.trade/site/img/quotex_logo.svg" class="logo" alt="Quotex Logo" />
-    <h1>Join Our Telegram Channel</h1>
-    <p>Daily Compounding • Software Signals • Live Trading Alerts</p>
-</header>
-    <div class="cta-section">
-        <a 
-            href="https://t.me/+jHnGT_iX69UxNjY1" 
-            class="cta-btn"
-            onclick="trackJoin()">
-            Join on Telegram
-        </a>
+<div class="container" id="mainContainer">
+    <!-- QUOTEX LOGO: Added 'filter: invert(1)' to turn white logo into black -->
+    <img src="https://market-qx.trade/site/img/quotex_logo.svg" alt="Quotex" width="160" style="margin-bottom: 15px; filter: invert(1);">
+    
+    <!-- BIG FLAG AREA -->
+    <div id="countryFlag" class="flag-icon">🌐</div>
+    
+    <!-- Headline -->
+    <h1 id="headline">Get Exclusive Access to Our Private Channel</h1>
+    
+    <!-- Subheadline -->
+    <p id="subheadline">Join thousands of members receiving daily updates, signals, and premium content for free.</p>
+    
+    <!-- Benefits -->
+    <ul class="benefits">
+        <li id="benefit1">Instant market updates</li>
+        <li id="benefit2">Exclusive member-only tips</li>
+        <li id="benefit3">100% Free to join today</li>
+    </ul>
+
+    <!-- Button -->
+    <button id="joinBtn" class="btn">JOIN CHANNEL NOW ➤</button>
+    
+    <div class="footer" id="footerText">
+        Secure & Private • Telegram App Required
     </div>
-<div class="container">
-
-
-    <div class="features">
-        <div class="feature-box">
-            <h3>Daily Profits</h3>
-            <p>High-quality signals designed for daily compounding growth.</p>
-        </div>
-        <div class="feature-box">
-            <h3>Software Signals</h3>
-            <p>Advanced AI-based trading signals for fast and accurate results.</p>
-        </div>
-        <div class="feature-box">
-            <h3>Live Alerts</h3>
-            <p>Get instant signal notifications directly on Telegram.</p>
-        </div>
-    </div>
-
 </div>
 
-<footer>
-    © 2025 NTZ — All Rights Reserved
-</footer>
-
 <script>
-    function trackJoin() {
-        fbq('track', 'Subscribe');
+    // --- 1. Content Configuration ---
+    const content = {
+        en: {
+            flag: "🌐", 
+            headline: "Get Sureshot Signal for Quotex Everyday",
+            subheadline: "Join our Telegram Channels for Daily Sureshot Signal and Accurate Result.",
+            b1: "Daily Live Signal",
+            b2: "Every News Signal",
+            b3: "100% Free to join today",
+            btn: "JOIN CHANNEL NOW ➤",
+            footer: "Transparent and Secure • Telegram App Required"
+        },
+        bd: {
+            flag: "🇧🇩", // Bangladesh Flag
+            headline: "আমাদের টেলিগ্রাম চ্যানেলে জয়েন করুন",
+            subheadline: "প্রতিদিন আমাদের সিগনাল নিয়ে প্রফিট করতে চাইলে আমাদের চ্যানেলে জয়েন হোন",
+            b1: "প্রতিদিন লাইভ সিগনাল",
+            b2: "প্রতিটি নিউজ সিগনাল",
+            b3: "প্রতি সপ্তাহে একটি গিভওয়ে",
+            btn: "এখনই চ্যানেলে জয়েন করুন ➤",
+            footer: "টেলিগ্রাম অ্যাপ থাকতে হবে"
+        },
+        pk: {
+            flag: "🇵🇰", // Pakistan Flag
+            headline: "ہمارے ٹیلی گرام چینل میں شامل ہوں",
+            subheadline: "اگر آپ روزانہ ہمارے سگنلز سے منافع کمانا چاہتے ہیں تو آج ہی ہمارا چینل جوائن کریں",
+            b1: "روزانہ لائیو ٹریڈنگ سگنلز",
+            b2: "ہر اہم نیوز اپڈیٹ اور سگنل",
+            b3: "ہر ہفتے خصوصی گِیو اوے (Giveaway)",
+            btn: "ابھی چینل جوائن کریں ➤",
+            footer: "آپ کے پاس ٹیلی گرام ایپ ہونی چاہیے"
+        }
+    };
+
+    // --- 2. Function to Update Text & Flag ---
+    function setLanguage(lang) {
+        // Use English if lang doesn't exist
+        const data = content[lang] || content['en'];
+        
+        document.getElementById('countryFlag').textContent = data.flag;
+        document.getElementById('headline').textContent = data.headline;
+        document.getElementById('subheadline').textContent = data.subheadline;
+        document.getElementById('benefit1').textContent = data.b1;
+        document.getElementById('benefit2').textContent = data.b2;
+        document.getElementById('benefit3').textContent = data.b3;
+        document.getElementById('joinBtn').textContent = data.btn;
+        document.getElementById('footerText').textContent = data.footer;
+
+        // Add RTL class for Urdu
+        if (lang === 'pk') {
+            document.getElementById('mainContainer').classList.add('rtl');
+        } else {
+            document.getElementById('mainContainer').classList.remove('rtl');
+        }
     }
+
+    // --- 3. Reliable IP Detection (using ipwho.is) ---
+    fetch('https://ipwho.is/')
+        .then(response => response.json())
+        .then(data => {
+            if(data.success) {
+                const country = data.country_code; // Returns BD, PK, US, etc.
+                
+                if (country === 'BD') {
+                    setLanguage('bd');
+                } else if (country === 'PK') {
+                    setLanguage('pk');
+                } else {
+                    setLanguage('en'); // Default
+                }
+            } else {
+                console.log('IP Detection Error:', data.message);
+                setLanguage('en'); // Fallback to English
+            }
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+            setLanguage('en'); // Fallback to English
+        });
+
+    // --- 4. Pixel Event & Redirect ---
+    document.getElementById('joinBtn').addEventListener('click', function() {
+        // Fire Facebook Lead Event
+        fbq('track', 'Lead');
+
+        // Redirect to Telegram
+        setTimeout(function() {
+            window.location.href = "https://t.me/+Xa5UiF5bwvwzMWQ1"; 
+        }, 300);
+    });
 </script>
 
 </body>
