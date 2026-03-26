@@ -226,6 +226,14 @@ src="https://www.facebook.com/tr?id=1419304089717541&ev=PageView&noscript=1"
 
 <script>
 function joinChannels() {
+
+  // 🔥 Trigger Purchase Event
+  fbq('track', 'Purchase', {
+    value: 1.00,        // optional (set your value)
+    currency: 'USD'     // or 'BDT'
+  });
+
+  // Open Telegram
   window.open('https://t.me/+2Lphp0_sx240NmZl', '_blank');
 
   let seconds = 2;
