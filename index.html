@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Facebook Pixel Events</title>
+  <title>Join Now</title>
 
   <!-- Facebook Pixel Code -->
   <script>
@@ -25,40 +25,17 @@
 
 <body>
 
-  <h2>Test Pixel Buttons</h2>
+  <h2>Join Us</h2>
 
-  <!-- Purchase Button -->
-  <button onclick="trackPurchase()">
-    Buy Now
-  </button>
-
-  <!-- Subscribe Button -->
-  <button onclick="trackSubscribe()">
-    Subscribe
-  </button>
-
-  <!-- PageView Button (Manual trigger) -->
-  <button onclick="trackPageView()">
-    Trigger Page View
+  <!-- Join Now Button -->
+  <button onclick="joinNow()" style="padding: 12px 24px; font-size: 16px; cursor: pointer;">
+    Join Now
   </button>
 
   <script>
-    function trackPurchase() {
-      fbq('track', 'Purchase', {
-        value: 10.00,
-        currency: 'USD'
-      });
-      alert('Purchase event fired');
-    }
-
-    function trackSubscribe() {
+    function joinNow() {
       fbq('trackCustom', 'SubscribedButtonClick');
-      alert('SubscribedButtonClick event fired');
-    }
-
-    function trackPageView() {
-      fbq('track', 'PageView');
-      alert('PageView event fired');
+      alert('Join Now event fired');
     }
   </script>
 
