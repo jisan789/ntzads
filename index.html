@@ -1,259 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Our Channel</title>
-    
-    <!-- 1. FACEBOOK PIXEL CODE (Your ID: 800558836323410) -->
-    <script>
+  <meta charset="UTF-8">
+  <title>Facebook Pixel Events</title>
+
+  <!-- Facebook Pixel Code -->
+  <script>
     !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod ?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
+    if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];
+    t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    s.parentNode.insertBefore(t,s)
+    }(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    
-    fbq('init', '800558836323410'); 
+
+    fbq('init', '1419304089717541');
     fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=800558836323410&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- END PIXEL CODE -->
-
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f4f6f8;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .container {
-            background: white;
-            max-width: 400px;
-            width: 90%;
-            padding: 40px 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        /* Flag Icon Style */
-        .flag-icon {
-            font-size: 60px; /* Big Flag */
-            margin-bottom: 15px;
-            display: block;
-            line-height: 1;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-        }
-
-        h1 {
-            color: #222;
-            font-size: 24px;
-            margin-bottom: 15px;
-            line-height: 1.3;
-            font-weight: 700;
-        }
-        p {
-            color: #555;
-            font-size: 16px;
-            line-height: 1.5;
-            margin-bottom: 25px;
-        }
-        .benefits {
-            text-align: left;
-            margin-bottom: 30px;
-            padding-left: 10px;
-        }
-        .benefits li {
-            margin-bottom: 12px;
-            color: #444;
-            list-style: none;
-            display: flex;
-            align-items: center;
-            font-size: 15px;
-        }
-        .benefits li:before {
-            content: '✅';
-            margin-right: 12px;
-            font-size: 1.2em;
-        }
-        .btn {
-            background-color: #0088cc;
-            color: white;
-            padding: 18px 25px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 18px;
-            display: block;
-            width: 100%;
-            box-sizing: border-box;
-            cursor: pointer;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0, 136, 204, 0.3);
-            transition: transform 0.1s, background-color 0.2s;
-        }
-        .btn:hover {
-            background-color: #0077b5;
-        }
-        .btn:active {
-            transform: scale(0.98);
-        }
-        .footer {
-            margin-top: 25px;
-            font-size: 12px;
-            color: #999;
-            border-top: 1px solid #eee;
-            padding-top: 15px;
-        }
-        
-        /* Urdu / RTL Support */
-        .rtl {
-            direction: rtl;
-            font-family: 'Tahoma', 'Arial', sans-serif;
-        }
-        .rtl .benefits {
-            text-align: right;
-            padding-right: 10px;
-            padding-left: 0;
-        }
-        .rtl .benefits li:before {
-            margin-right: 0;
-            margin-left: 12px;
-        }
-    </style>
+  </script>
 </head>
+
 <body>
 
-<div class="container" id="mainContainer">
-    <!-- QUOTEX LOGO: Added 'filter: invert(1)' to turn white logo into black -->
-    <img src="https://market-qx.trade/site/img/quotex_logo.svg" alt="Quotex" width="160" style="margin-bottom: 15px; filter: invert(1);">
-    
-    <!-- BIG FLAG AREA -->
-    <div id="countryFlag" class="flag-icon">🌐</div>
-    
-    <!-- Headline -->
-    <h1 id="headline">Get Exclusive Access to Our Private Channel</h1>
-    
-    <!-- Subheadline -->
-    <p id="subheadline">Join thousands of members receiving daily updates, signals, and premium content for free.</p>
-    
-    <!-- Benefits -->
-    <ul class="benefits">
-        <li id="benefit1">Instant market updates</li>
-        <li id="benefit2">Exclusive member-only tips</li>
-        <li id="benefit3">100% Free to join today</li>
-    </ul>
+  <h2>Test Pixel Buttons</h2>
 
-    <!-- Button -->
-    <button id="joinBtn" class="btn">JOIN CHANNEL NOW ➤</button>
-    
-    <div class="footer" id="footerText">
-        Secure & Private • Telegram App Required
-    </div>
-</div>
+  <!-- Purchase Button -->
+  <button onclick="trackPurchase()">
+    Buy Now
+  </button>
 
-<script>
-    // --- 1. Content Configuration ---
-    const content = {
-        en: {
-            flag: "🌐", 
-            headline: "Get Sureshot Signal for Quotex Everyday",
-            subheadline: "Join our Telegram Channels for Daily Sureshot Signal and Accurate Result.",
-            b1: "Daily Live Signal",
-            b2: "Every News Signal",
-            b3: "100% Free to join today",
-            btn: "JOIN CHANNEL NOW ➤",
-            footer: "Transparent and Secure • Telegram App Required"
-        },
-        bd: {
-            flag: "🇧🇩", // Bangladesh Flag
-            headline: "আমাদের টেলিগ্রাম চ্যানেলে জয়েন করুন",
-            subheadline: "প্রতিদিন আমাদের সিগনাল নিয়ে প্রফিট করতে চাইলে আমাদের চ্যানেলে জয়েন হোন",
-            b1: "প্রতিদিন লাইভ সিগনাল",
-            b2: "প্রতিটি নিউজ সিগনাল",
-            b3: "প্রতি সপ্তাহে একটি গিভওয়ে",
-            btn: "এখনই চ্যানেলে জয়েন করুন ➤",
-            footer: "টেলিগ্রাম অ্যাপ থাকতে হবে"
-        },
-        pk: {
-            flag: "🇵🇰", // Pakistan Flag
-            headline: "ہمارے ٹیلی گرام چینل میں شامل ہوں",
-            subheadline: "اگر آپ روزانہ ہمارے سگنلز سے منافع کمانا چاہتے ہیں تو آج ہی ہمارا چینل جوائن کریں",
-            b1: "روزانہ لائیو ٹریڈنگ سگنلز",
-            b2: "ہر اہم نیوز اپڈیٹ اور سگنل",
-            b3: "ہر ہفتے خصوصی گِیو اوے (Giveaway)",
-            btn: "ابھی چینل جوائن کریں ➤",
-            footer: "آپ کے پاس ٹیلی گرام ایپ ہونی چاہیے"
-        }
-    };
+  <!-- Subscribe Button -->
+  <button onclick="trackSubscribe()">
+    Subscribe
+  </button>
 
-    // --- 2. Function to Update Text & Flag ---
-    function setLanguage(lang) {
-        // Use English if lang doesn't exist
-        const data = content[lang] || content['en'];
-        
-        document.getElementById('countryFlag').textContent = data.flag;
-        document.getElementById('headline').textContent = data.headline;
-        document.getElementById('subheadline').textContent = data.subheadline;
-        document.getElementById('benefit1').textContent = data.b1;
-        document.getElementById('benefit2').textContent = data.b2;
-        document.getElementById('benefit3').textContent = data.b3;
-        document.getElementById('joinBtn').textContent = data.btn;
-        document.getElementById('footerText').textContent = data.footer;
+  <!-- PageView Button (Manual trigger) -->
+  <button onclick="trackPageView()">
+    Trigger Page View
+  </button>
 
-        // Add RTL class for Urdu
-        if (lang === 'pk') {
-            document.getElementById('mainContainer').classList.add('rtl');
-        } else {
-            document.getElementById('mainContainer').classList.remove('rtl');
-        }
+  <script>
+    function trackPurchase() {
+      fbq('track', 'Purchase', {
+        value: 10.00,
+        currency: 'USD'
+      });
+      alert('Purchase event fired');
     }
 
-    // --- 3. Reliable IP Detection (using ipwho.is) ---
-    fetch('https://ipwho.is/')
-        .then(response => response.json())
-        .then(data => {
-            if(data.success) {
-                const country = data.country_code; // Returns BD, PK, US, etc.
-                
-                if (country === 'BD') {
-                    setLanguage('bd');
-                } else if (country === 'PK') {
-                    setLanguage('pk');
-                } else {
-                    setLanguage('en'); // Default
-                }
-            } else {
-                console.log('IP Detection Error:', data.message);
-                setLanguage('en'); // Fallback to English
-            }
-        })
-        .catch(error => {
-            console.error('Fetch error:', error);
-            setLanguage('en'); // Fallback to English
-        });
+    function trackSubscribe() {
+      fbq('trackCustom', 'SubscribedButtonClick');
+      alert('SubscribedButtonClick event fired');
+    }
 
-    // --- 4. Pixel Event & Redirect ---
-    document.getElementById('joinBtn').addEventListener('click', function() {
-        // Fire Facebook Lead Event
-        fbq('track', 'Lead');
-
-        // Redirect to Telegram
-        setTimeout(function() {
-            window.location.href = "https://t.me/+Xa5UiF5bwvwzMWQ1"; 
-        }, 300);
-    });
-</script>
+    function trackPageView() {
+      fbq('track', 'PageView');
+      alert('PageView event fired');
+    }
+  </script>
 
 </body>
 </html>
