@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Join Now</title>
 
-  <!-- Facebook Pixel Code -->
+  <!-- Facebook Pixel -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod ?
@@ -35,16 +35,13 @@
 
   <script>
     function joinNow() {
-      // 1. Standard Purchase Event
+      // ONLY fire Purchase manually
       fbq('track', 'Purchase', {
         value: 10.00,
         currency: 'USD'
       });
 
-      // 2. Custom Subscribe Button Event (auto-detected in Events Manager)
-      fbq('trackCustom', 'SubscribedButtonClick');
-
-      alert('Purchase + Subscribe events fired');
+      alert('Purchase event fired');
     }
   </script>
 
