@@ -11,242 +11,558 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1270732884418461');
+fbq('init', '800558836323410');
 fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1270732884418461&ev=PageView&noscript=1"
+src="https://www.facebook.com/tr?id=800558836323410&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NTZ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>News Trading Zone</title>
+<meta name="description" content="Quotex ট্রেডারদের জন্য ফ্রি সিগন্যাল ও মার্কেট অ্যানালাইসিস কমিউনিটি — News Trading Zone।">
+<meta name="theme-color" content="#030712">
+<link rel="icon" href="https://raw.githubusercontent.com/kamilhussen24/New-Zone/refs/heads/main/IMG_20260413_193528_329.jpg">
 
-<!-- Added Google Fonts for better Bengali & English typography -->
+<!-- Open Graph tags -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="News Trading Zone — কমিউনিটি">
+<meta property="og:description" content="আজই জয়েন করুন, সম্পূর্ণ ফ্রি।">
+<meta property="og:image" content="https://raw.githubusercontent.com/kamilhussen24/New-Zone/refs/heads/main/IMG_20260413_193528_329.jpg">
+<meta name="robots" content="noindex, nofollow">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
 
 <style>
-  /* Reset and Base Styles */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Hind Siliguri', sans-serif;
+  :root {
+    --bg-dark: #030712;
+    --card-bg: rgba(17, 24, 39, 0.7);
+    --card-border: rgba(55, 65, 81, 0.5);
+    --neon-green: #00F0FF;
+    --neon-glow: rgba(0, 240, 255, 0.25);
+    --tg-blue: #229ED9;
+    --text-main: #F3F4F6;
+    --text-muted: #9CA3AF;
   }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
 
   body {
-    background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
-    color: #334155;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 20px;
-  }
-
-  /* Main Container */
-  .wrapper {
-    width: 100%;
-    max-width: 500px; /* Perfect for mobile and looks neat on desktop */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  /* Content Box */
-  .box {
-    background: #ffffff;
-    width: 100%;
-    border-radius: 16px;
-    padding: 30px 24px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    background-color: var(--bg-dark);
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 100% 100%, rgba(34, 158, 217, 0.05) 0%, transparent 40%);
+    color: var(--text-main);
+    font-family: 'Plus Jakarta Sans', sans-serif;
     text-align: center;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* ---------- Header ---------- */
+  header.header-middle {
+    position: relative;
+    background: linear-gradient(180deg, rgba(17, 24, 39, 0.8) 0%, rgba(3, 7, 18, 0.95) 100%);
+    border-bottom: 1px solid var(--card-border);
+    padding: 50px 20px 45px;
+    cursor: pointer;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+  }
+
+  /* Cyberpunk style grid background overlay */
+  header.header-middle::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 24px 24px;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* Subtly animated data flow lines */
+  .ticker {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 0 10px 0px;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .ticker span {
+    display: block;
+    width: 3px;
+    background: var(--neon-green);
+    border-radius: 4px;
+    animation: tick 2s ease-in-out infinite alternate;
+  }
+  @keyframes tick {
+    0% { transform: scaleY(0.2); }
+    100% { transform: scaleY(1); }
+  }
+
+  .badge-ring {
+    position: relative;
+    width: 92px;
+    height: 92px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(135deg, var(--neon-green), var(--tg-blue));
+    box-shadow: 0 0 25px var(--neon-glow);
+    z-index: 2;
+  }
+  .custom-logo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: block;
+    object-fit: cover;
+    background: var(--bg-dark);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .badge-ring:hover .custom-logo { transform: scale(1.08) rotate(3deg); }
+
+  .eyebrow {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--neon-green);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    background: rgba(0, 240, 255, 0.1);
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 240, 255, 0.2);
   }
 
   h1 {
-    font-size: 24px;
-    color: #0f172a;
-    font-weight: 700;
-    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 2.2rem;
+    color: #FFFFFF;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    animation: fadeIn 1s ease-out;
   }
 
-  .main-text {
-    font-size: 16px;
-    color: #475569;
-    line-height: 1.6;
-    margin-bottom: 25px;
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
-  .main-text strong {
-    color: #0f172a;
+  /* ---------- CTA ---------- */
+  .cta-wrap {
+    margin-top: -26px;
+    position: relative;
+    z-index: 5;
   }
 
-  /* Call to Action Button */
   .join-btn {
-    background-color: #2481cc; /* Telegram Blue */
-    color: #ffffff;
+    background: linear-gradient(135deg, #00C6FF 0%, #0072FF 100%);
+    color: #FFFFFF;
+    padding: 18px 46px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
     border: none;
-    width: 100%;
-    padding: 16px 20px;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 12px;
+    border-radius: 14px;
     cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 114, 255, 0.4);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
-    box-shadow: 0 4px 15px rgba(36, 129, 204, 0.3);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: pulse 2.5s infinite;
+  }
+
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 198, 255, 0.5); }
+    70% { box-shadow: 0 0 0 15px rgba(0, 198, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 198, 255, 0); }
   }
 
   .join-btn:hover {
-    background-color: #1d69a6;
-    box-shadow: 0 6px 20px rgba(36, 129, 204, 0.4);
-    transform: translateY(-2px);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 198, 255, 0.6);
   }
 
-  .join-btn:active {
-    transform: translateY(1px);
-    box-shadow: 0 2px 10px rgba(36, 129, 204, 0.3);
+  .join-btn img { height: 24px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+
+  .sub-note {
+    margin-top: 16px;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    font-weight: 500;
   }
 
-  /* Visual Divider */
-  .divider {
+  /* ---------- Main text ---------- */
+  .main-text {
+    margin: 40px auto 10px;
+    width: 88%;
+    max-width: 600px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-main);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 24px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.8s ease-out;
+  }
+  .main-text strong { color: var(--neon-green); font-weight: 700; }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ---------- Feature icons ---------- */
+  .icon-container {
+    margin: 30px auto 10px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    max-width: 520px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+  }
+
+  .icon-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 110px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+  }
+  .icon-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--neon-green);
+    box-shadow: 0 10px 25px rgba(0, 240, 255, 0.15);
+  }
+  .icon-card img { 
+    width: 32px; 
+    height: 32px; 
+    filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.4));
+  }
+  .icon-card span {
+    font-size: 0.82rem;
+    color: var(--text-main);
+    font-weight: 600;
+  }
+
+  hr {
+    border: 0;
     height: 1px;
-    background-color: #e2e8f0;
-    margin: 30px 0;
-    width: 100%;
+    background: linear-gradient(to right, transparent, var(--card-border), transparent);
+    margin: 40px auto;
+    width: 60%;
+    cursor: pointer;
   }
 
-  /* Privacy Policy Section */
+  /* ---------- Privacy box ---------- */
   .privacy-box {
+    background: var(--card-bg);
+    margin: 0 auto 40px;
+    padding: 28px 24px;
+    border-radius: 20px;
+    width: 88%;
+    max-width: 600px;
+    color: var(--text-muted);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
     text-align: left;
-    background: #f8fafc;
-    padding: 18px;
-    border-radius: 10px;
-    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  .privacy-box h2,
+  .privacy-box p {
+    text-align: left;
   }
 
   .privacy-box h2 {
-    font-size: 16px;
-    margin-bottom: 12px;
-    color: #334155;
-    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 14px;
+    color: #FFFFFF;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .privacy-box h2::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 16px;
+    background: var(--neon-green);
+    border-radius: 3px;
   }
 
   .privacy-box p {
-    font-size: 13px;
-    color: #64748b;
-    line-height: 1.5;
-    margin-bottom: 8px;
-    position: relative;
-    padding-left: 12px;
-  }
-  
-  /* Adding small bullets to the privacy text */
-  .privacy-box p::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #94a3b8;
+    margin: 8px 0;
+    font-size: 0.88rem;
+    line-height: 1.6;
   }
 
-  .privacy-box p:last-child {
-    margin-bottom: 0;
-  }
-
-  /* Footer */
+  /* ---------- Footer ---------- */
   footer {
-    font-size: 14px;
-    color: #64748b;
-    font-weight: 600;
+    margin: 20px 0 34px;
+    padding: 0 20px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: nowrap;
   }
 
-  /* Extra adjustments for very small screens */
-  @media (max-width: 380px) {
-    .box {
-      padding: 24px 16px;
-    }
-    h1 {
-      font-size: 20px;
-    }
-    .main-text {
-      font-size: 15px;
-    }
-    .join-btn {
-      font-size: 16px;
-      padding: 14px;
-    }
+  .copyright-text {
+    letter-spacing: 0.3px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  .copyright-text:hover { color: var(--neon-green); }
+
+  .telegram-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: var(--tg-blue);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    flex-shrink: 0;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(34, 158, 217, 0.4);
+  }
+  .telegram-link:hover {
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: 0 0 15px rgba(34, 158, 217, 0.8);
+  }
+  .telegram-link img {
+    width: 14px;
+    height: 14px;
+    filter: brightness(0) invert(1);
+  }
+
+  @media (max-width: 480px) {
+    h1 { font-size: 1.8rem; }
+    .join-btn { font-size: 1.1rem; padding: 16px 32px; width: 100%; }
+    .main-text { font-size: 0.95rem; width: 92%; }
+    .icon-card { min-width: 90px; padding: 14px 10px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .join-btn, .badge-ring .custom-logo, .ticker span { animation: none; }
   }
 </style>
 </head>
 
 <body>
-
-<div class="wrapper">
-
-  <div class="box">
-
-    <h1>News Trading Zone</h1>
-
-    <div class="main-text">
-      আপনি যদি Quotex এ ট্রেড করে লসে থাকেন তাহলে আপনি আমাদের এই <strong>News Trading Zone</strong> গ্রুপে জয়েন হতে পারেন <br><br>
-      যদি প্রফেশনাল একজন ট্রেডার এর সাথে কাজ করতে চান তাহলে জয়েন হতে পারেন আমাদের চ্যানেল এ - একদম ফ্রি !
+  <header class="header-middle">
+    <div class="ticker" aria-hidden="true">
+      <span style="height:40%; animation-delay:0s;"></span>
+      <span style="height:70%; animation-delay:0.2s;"></span>
+      <span style="height:55%; animation-delay:0.4s;"></span>
+      <span style="height:85%; animation-delay:0.1s;"></span>
+      <span style="height:35%; animation-delay:0.3s;"></span>
+      <span style="height:65%; animation-delay:0.5s;"></span>
+      <span style="height:45%; animation-delay:0.2s;"></span>
+      <span style="height:75%; animation-delay:0.4s;"></span>
+      <span style="height:50%; animation-delay:0.1s;"></span>
+      <span style="height:80%; animation-delay:0.3s;"></span>
     </div>
+    <div class="badge-ring">
+      <img class="custom-logo" src="https://raw.githubusercontent.com/kamilhussen24/New-Zone/refs/heads/main/IMG_20260413_193528_329.jpg" alt="News Trading Zone Logo" width="92" height="92" fetchpriority="high">
+    </div>
+    <span class="eyebrow">Free Signal Community</span>
+    <h1>News Trading Zone</h1>
+  </header>
 
-    <button class="join-btn" onclick="joinChannels()">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/telegram.png" style="height:24px; width:24px;" alt="Telegram">
+  <div class="cta-wrap">
+    <button class="join-btn" type="button">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/telegram-app.png" alt="telegram">
       JOIN NOW
     </button>
+    <div class="sub-note">৩,০০০+ ট্রেডার ইতিমধ্যে জয়েন করেছেন</div>
+  </div>
 
-    <div class="divider"></div>
+  <div class="main-text">
+    আপনি যদি <strong>Quotex</strong>-এ ট্রেড করে লসে থাকেন, তাহলে আমাদের
+    <strong>News Trading Zone</strong> গ্রুপে জয়েন করতে পারেন।<br><br>
+    প্রফেশনালি ট্রেড করতে চাইলে আজই জয়েন করুন — সম্পূর্ণ ফ্রি!
+  </div>
 
-    <div class="privacy-box">
-      <h2>Privacy Policy</h2>
-      <p>আমাদের ওয়েবসাইট আপনার কোনো ব্যক্তিগত তথ্য সংগ্রহ করে না।</p>
-      <p>এই পেজ শুধুমাত্র আপনাকে আমাদের অফিসিয়াল Telegram চ্যানেলে রিডাইরেক্ট করার জন্য তৈরি।</p>
-      <p>আমরা কোনো লগইন, পেমেন্ট, বা রেজিস্ট্রেশনের তথ্য গ্রহণ করি না।</p>
-      <p>আপনার গোপনীয়তা আমাদের কাছে গুরুত্বপূর্ণ। আমরা কোনো cookies বা tracking tools ব্যবহার করি না।</p>
-      <p>প্রশ্ন থাকলে আমাদের Telegram চ্যানেলে যোগাযোগ করতে পারেন।</p>
+  <div class="icon-container">
+    <div class="icon-card">
+      <img src="https://img.icons8.com/ios-filled/50/00F0FF/stock-share.png" alt="trading" width="32" height="32" loading="lazy">
+      <span>লাইভ সিগন্যাল</span>
     </div>
+    <div class="icon-card">
+      <img src="https://img.icons8.com/ios-filled/50/00F0FF/graph.png" alt="chart" width="32" height="32" loading="lazy">
+      <span>মার্কেট</span>
+    </div>
+    <div class="icon-card">
+      <img src="https://img.icons8.com/ios-filled/50/00F0FF/money-bag.png" alt="profit" width="32" height="32" loading="lazy">
+      <span>প্রফিট টিপস</span>
+    </div>
+  </div>
 
+  <hr>
+
+  <div class="privacy-box">
+    <h2>Privacy Policy</h2>
+    <p>আমাদের ওয়েবসাইট আপনার কোনো ব্যক্তিগত তথ্য সংগ্রহ করে না।</p>
+    <p>এই পেজ শুধুমাত্র আপনাকে আমাদের অফিসিয়াল Telegram চ্যানেলে রিডাইরেক্ট করার জন্য তৈরি।</p>
+    <p>আমরা কোনো লগইন, পেমেন্ট, বা রেজিস্ট্রেশনের তথ্য গ্রহণ করি না।</p>
+    <p>আপনার গোপনীয়তা আমাদের কাছে গুরুত্বপূর্ণ। আমরা কোনো cookies বা tracking tools ব্যবহার করি না।</p>
+    <p>প্রশ্ন থাকলে আমাদের Telegram চ্যানেলে যোগাযোগ করতে পারেন।</p>
   </div>
 
   <footer>
-    © 2026 NTZ
+    <span class="copyright-text">© 2026 Ads By NTZ</span>
+    <a href="https://t.me/+t8F0Vyy71cAzNjRl" target="_blank" rel="noopener noreferrer" class="telegram-link" title="Join our Telegram">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/telegram-app.png" alt="Telegram">
+    </a>
   </footer>
 
-</div>
+  <script>
+    const MAIN_TELEGRAM_LINK = 'https://t.me/+Qh07xeoXBbA5MjY9';
+    const KDEX_TELEGRAM_LINK = 'https://t.me/+Qh07xeoXBbA5MjY9';
 
-<script>
-function joinChannels() {
+    // Guard against a double-tap firing the event / redirect twice
+    let redirecting = false;
 
-  // 🔥 Trigger Purchase Event
-  fbq('track', 'Purchase', {
-    value: 1.00,        // optional (set your value)
-    currency: 'USD'     // or 'BDT'
-  });
+    // Reset the guard when the page is restored from bfcache (e.g. user hits back)
+    window.addEventListener('pageshow', function(event) {
+      redirecting = false;
+    });
 
-  // Open Telegram
-  window.open('https://t.me/+ep97KdggYO42OTg9', '_blank');
-
-  let seconds = 2;
-
-  const countdown = setInterval(() => {
-    seconds--;
-    if (seconds <= 0) {
-      clearInterval(countdown);
-      window.location.href = 'https://t.me/+ep97KdggYO42OTg9';
+    // Plain redirect, no Purchase event
+    function redirectToMainTelegram() {
+      if (redirecting) return;
+      redirecting = true;
+      window.location.href = MAIN_TELEGRAM_LINK;
     }
-  }, 1000);
-}
-</script>
 
+    function redirectToKDexTelegram() {
+      if (redirecting) return;
+      redirecting = true;
+      window.location.href = KDEX_TELEGRAM_LINK;
+    }
+
+    // Purchase event kept exactly as requested, fires once, then redirects
+    function redirectWithPurchaseEvent() {
+      if (redirecting) return;
+      redirecting = true;
+      fbq('track', 'Purchase', {
+        value: 100,
+        currency: 'BDT'
+      });
+      window.location.href = MAIN_TELEGRAM_LINK;
+    }
+
+    // ========== PURCHASE ENABLED ZONES (Go to Main Telegram) ==========
+    const purchaseZones = [
+      '.header-middle',
+      '.join-btn',
+      '.icon-container',
+      '.main-text',
+      'h1'
+    ];
+    purchaseZones.forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => {
+        el.addEventListener('click', function(e) {
+          e.stopPropagation();
+          redirectWithPurchaseEvent();
+        });
+      });
+    });
+
+    // ========== KDEX ZONES (Go to KDex Telegram, NO Purchase) ==========
+    const copyrightText = document.querySelector('.copyright-text');
+    if (copyrightText) {
+      copyrightText.addEventListener('click', function(e) {
+        e.stopPropagation();
+        redirectToKDexTelegram();
+      });
+    }
+
+    const footerLink = document.querySelector('.telegram-link');
+    if (footerLink) {
+      footerLink.addEventListener('click', function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        redirectToKDexTelegram();
+      });
+    }
+
+    // ========== OTHER ZONES (Go to Main Telegram, NO Purchase) ==========
+    const privacyBox = document.querySelector('.privacy-box');
+    if (privacyBox) {
+      privacyBox.addEventListener('click', function(e) {
+        e.stopPropagation();
+        redirectToMainTelegram();
+      });
+    }
+
+    const hrLine = document.querySelector('hr');
+    if (hrLine) {
+      hrLine.addEventListener('click', function(e) {
+        e.stopPropagation();
+        redirectToMainTelegram();
+      });
+    }
+
+    // Remaining body areas — fallback, no Purchase
+    document.body.addEventListener('click', function(e) {
+      const target = e.target;
+      const handledSelectors = [
+        '.header-middle', '.join-btn', '.icon-container', '.main-text', 'h1',
+        '.telegram-link', '.copyright-text', '.privacy-box', 'hr'
+      ];
+      for (const sel of handledSelectors) {
+        if (target.closest(sel)) return;
+      }
+      redirectToMainTelegram();
+    });
+</script>
 </body>
 </html>
