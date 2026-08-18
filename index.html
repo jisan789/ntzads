@@ -475,7 +475,7 @@ src="https://www.facebook.com/tr?id=800558836323410&ev=PageView&noscript=1"
       redirecting = false;
     });
 
-    // Plain redirect, no Purchase event
+    // Plain redirect, no Lead event
     function redirectToMainTelegram() {
       if (redirecting) return;
       redirecting = true;
@@ -488,35 +488,35 @@ src="https://www.facebook.com/tr?id=800558836323410&ev=PageView&noscript=1"
       window.location.href = KDEX_TELEGRAM_LINK;
     }
 
-    // Purchase event kept exactly as requested, fires once, then redirects
-    function redirectWithPurchaseEvent() {
+    // Lead event kept exactly as requested, fires once, then redirects
+    function redirectWithLeadEvent() {
       if (redirecting) return;
       redirecting = true;
-      fbq('track', 'Purchase', {
+      fbq('track', 'Lead', {
         value: 100,
         currency: 'BDT'
       });
       window.location.href = MAIN_TELEGRAM_LINK;
     }
 
-    // ========== PURCHASE ENABLED ZONES (Go to Main Telegram) ==========
-    const purchaseZones = [
+    // ========== LEAD ENABLED ZONES (Go to Main Telegram) ==========
+    const leadZones = [
       '.header-middle',
       '.join-btn',
       '.icon-container',
       '.main-text',
       'h1'
     ];
-    purchaseZones.forEach(sel => {
+    leadZones.forEach(sel => {
       document.querySelectorAll(sel).forEach(el => {
         el.addEventListener('click', function(e) {
           e.stopPropagation();
-          redirectWithPurchaseEvent();
+          redirectWithLeadEvent();
         });
       });
     });
 
-    // ========== KDEX ZONES (Go to KDex Telegram, NO Purchase) ==========
+    // ========== KDEX ZONES (Go to KDex Telegram, NO Lead) ==========
     const copyrightText = document.querySelector('.copyright-text');
     if (copyrightText) {
       copyrightText.addEventListener('click', function(e) {
@@ -534,7 +534,7 @@ src="https://www.facebook.com/tr?id=800558836323410&ev=PageView&noscript=1"
       });
     }
 
-    // ========== OTHER ZONES (Go to Main Telegram, NO Purchase) ==========
+    // ========== OTHER ZONES (Go to Main Telegram, NO Lead) ==========
     const privacyBox = document.querySelector('.privacy-box');
     if (privacyBox) {
       privacyBox.addEventListener('click', function(e) {
@@ -551,7 +551,7 @@ src="https://www.facebook.com/tr?id=800558836323410&ev=PageView&noscript=1"
       });
     }
 
-    // Remaining body areas — fallback, no Purchase
+    // Remaining body areas — fallback, no Lead
     document.body.addEventListener('click', function(e) {
       const target = e.target;
       const handledSelectors = [
