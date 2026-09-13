@@ -1,568 +1,709 @@
 <!DOCTYPE html>
 <html lang="bn">
+
 <head>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '800558836323410');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=800558836323410&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>News Trading Zone</title>
+    <meta name="description"
+        content="Quotex ট্রেডারদের জন্য ফ্রি সিগন্যাল ও মার্কেট অ্যানালাইসিস কমিউনিটি — News Trading Zone।">
+    <meta name="theme-color" content="#030712">
+    <link rel="icon"
+        href="https://raw.githubusercontent.com/kamilhussen24/New-Zone/refs/heads/main/IMG_20260413_193528_329.jpg">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>News Trading Zone</title>
-<meta name="description" content="Quotex ট্রেডারদের জন্য ফ্রি সিগন্যাল ও মার্কেট অ্যানালাইসিস কমিউনিটি — News Trading Zone।">
-<meta name="theme-color" content="#030712">
-<link rel="icon" href="https://raw.githubusercontent.com/kamilhussen24/New-Zone/refs/heads/main/IMG_20260413_193528_329.jpg">
+    <!-- Open Graph tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="News Trading Zone — কমিউনিটি">
+    <meta property="og:description" content="আজই জয়েন করুন, সম্পূর্ণ ফ্রি।">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/kamilhussen24/New-Zone/refs/heads/main/IMG_20260413_193528_329.jpg">
+    <meta name="robots" content="noindex, nofollow">
 
-<!-- Open Graph tags -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="News Trading Zone — কমিউনিটি">
-<meta property="og:description" content="আজই জয়েন করুন, সম্পূর্ণ ফ্রি।">
-<meta property="og:image" content="https://raw.githubusercontent.com/kamilhussen24/New-Zone/refs/heads/main/IMG_20260413_193528_329.jpg">
-<meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #030712;
+            --card-bg: rgba(17, 24, 39, 0.7);
+            --card-border: rgba(55, 65, 81, 0.5);
+            --neon-green: #00F0FF;
+            --neon-glow: rgba(0, 240, 255, 0.25);
+            --tg-blue: #229ED9;
+            --text-main: #F3F4F6;
+            --text-muted: #9CA3AF;
+        }
 
-<style>
-  :root {
-    --bg-dark: #030712;
-    --card-bg: rgba(17, 24, 39, 0.7);
-    --card-border: rgba(55, 65, 81, 0.5);
-    --neon-green: #00F0FF;
-    --neon-glow: rgba(0, 240, 255, 0.25);
-    --tg-blue: #229ED9;
-    --text-main: #F3F4F6;
-    --text-muted: #9CA3AF;
-  }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  * { margin:0; padding:0; box-sizing:border-box; }
+        html {
+            scroll-behavior: smooth;
+        }
 
-  html { scroll-behavior: smooth; }
+        body {
+            background-color: var(--bg-dark);
+            background-image:
+                radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(34, 158, 217, 0.05) 0%, transparent 40%);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
 
-  body {
-    background-color: var(--bg-dark);
-    background-image: 
-      radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.08) 0%, transparent 50%),
-      radial-gradient(circle at 100% 100%, rgba(34, 158, 217, 0.05) 0%, transparent 40%);
-    color: var(--text-main);
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    text-align: center;
-    overflow-x: hidden;
-    min-height: 100vh;
-  }
+        /* ---------- Header ---------- */
+        header.header-middle {
+            position: relative;
+            background: linear-gradient(180deg, rgba(17, 24, 39, 0.8) 0%, rgba(3, 7, 18, 0.95) 100%);
+            border-bottom: 1px solid var(--card-border);
+            padding: 50px 20px 45px;
+            cursor: pointer;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
 
-  /* ---------- Header ---------- */
-  header.header-middle {
-    position: relative;
-    background: linear-gradient(180deg, rgba(17, 24, 39, 0.8) 0%, rgba(3, 7, 18, 0.95) 100%);
-    border-bottom: 1px solid var(--card-border);
-    padding: 50px 20px 45px;
-    cursor: pointer;
-    overflow: hidden;
-    backdrop-filter: blur(10px);
-  }
+        /* Cyberpunk style grid background overlay */
+        header.header-middle::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 24px 24px;
+            z-index: 1;
+            pointer-events: none;
+        }
 
-  /* Cyberpunk style grid background overlay */
-  header.header-middle::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
-    background-size: 24px 24px;
-    z-index: 1;
-    pointer-events: none;
-  }
+        /* Subtly animated data flow lines */
+        .ticker {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            padding: 0 10px 0px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 1;
+        }
 
-  /* Subtly animated data flow lines */
-  .ticker {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-around;
-    padding: 0 10px 0px;
-    opacity: 0.15;
-    pointer-events: none;
-    z-index: 1;
-  }
-  .ticker span {
-    display: block;
-    width: 3px;
-    background: var(--neon-green);
-    border-radius: 4px;
-    animation: tick 2s ease-in-out infinite alternate;
-  }
-  @keyframes tick {
-    0% { transform: scaleY(0.2); }
-    100% { transform: scaleY(1); }
-  }
+        .ticker span {
+            display: block;
+            width: 3px;
+            background: var(--neon-green);
+            border-radius: 4px;
+            animation: tick 2s ease-in-out infinite alternate;
+        }
 
-  .badge-ring {
-    position: relative;
-    width: 92px;
-    height: 92px;
-    margin: 0 auto 20px;
-    border-radius: 50%;
-    padding: 3px;
-    background: linear-gradient(135deg, var(--neon-green), var(--tg-blue));
-    box-shadow: 0 0 25px var(--neon-glow);
-    z-index: 2;
-  }
-  .custom-logo {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    display: block;
-    object-fit: cover;
-    background: var(--bg-dark);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-  .badge-ring:hover .custom-logo { transform: scale(1.08) rotate(3deg); }
+        @keyframes tick {
+            0% {
+                transform: scaleY(0.2);
+            }
 
-  .eyebrow {
-    position: relative;
-    z-index: 2;
-    display: inline-block;
-    font-family: 'Outfit', sans-serif;
-    font-weight: 700;
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    color: var(--neon-green);
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    background: rgba(0, 240, 255, 0.1);
-    padding: 6px 14px;
-    border-radius: 20px;
-    border: 1px solid rgba(0, 240, 255, 0.2);
-  }
+            100% {
+                transform: scaleY(1);
+            }
+        }
 
-  h1 {
-    position: relative;
-    z-index: 2;
-    margin: 0;
-    font-family: 'Outfit', sans-serif;
-    font-weight: 800;
-    font-size: 2.2rem;
-    color: #FFFFFF;
-    line-height: 1.25;
-    letter-spacing: -0.5px;
-    animation: fadeIn 1s ease-out;
-  }
+        .badge-ring {
+            position: relative;
+            width: 92px;
+            height: 92px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(135deg, var(--neon-green), var(--tg-blue));
+            box-shadow: 0 0 25px var(--neon-glow);
+            z-index: 2;
+        }
 
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+        .custom-logo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: block;
+            object-fit: cover;
+            background: var(--bg-dark);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-  /* ---------- CTA ---------- */
-  .cta-wrap {
-    margin-top: -26px;
-    position: relative;
-    z-index: 5;
-  }
+        .badge-ring:hover .custom-logo {
+            transform: scale(1.08) rotate(3deg);
+        }
 
-  .join-btn {
-    background: linear-gradient(135deg, #00C6FF 0%, #0072FF 100%);
-    color: #FFFFFF;
-    padding: 18px 46px;
-    font-family: 'Outfit', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    border: none;
-    border-radius: 14px;
-    cursor: pointer;
-    box-shadow: 0 10px 30px rgba(0, 114, 255, 0.4);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    animation: pulse 2.5s infinite;
-  }
+        .eyebrow {
+            position: relative;
+            z-index: 2;
+            display: inline-block;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: var(--neon-green);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            background: rgba(0, 240, 255, 0.1);
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+        }
 
-  @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(0, 198, 255, 0.5); }
-    70% { box-shadow: 0 0 0 15px rgba(0, 198, 255, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(0, 198, 255, 0); }
-  }
+        h1 {
+            position: relative;
+            z-index: 2;
+            margin: 0;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 2.2rem;
+            color: #FFFFFF;
+            line-height: 1.25;
+            letter-spacing: -0.5px;
+            animation: fadeIn 1s ease-out;
+        }
 
-  .join-btn:hover {
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(0, 198, 255, 0.6);
-  }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
 
-  .join-btn img { height: 24px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-  .sub-note {
-    margin-top: 16px;
-    font-size: 0.88rem;
-    color: var(--text-muted);
-    font-weight: 500;
-  }
+        /* ---------- CTA ---------- */
+        .cta-wrap {
+            margin-top: -26px;
+            position: relative;
+            z-index: 5;
+        }
 
-  /* ---------- Main text ---------- */
-  .main-text {
-    margin: 40px auto 10px;
-    width: 88%;
-    max-width: 600px;
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: var(--text-main);
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    padding: 24px;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    animation: slideUp 0.8s ease-out;
-  }
-  .main-text strong { color: var(--neon-green); font-weight: 700; }
+        .join-btn {
+            background: linear-gradient(135deg, #00C6FF 0%, #0072FF 100%);
+            color: #FFFFFF;
+            padding: 18px 46px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 114, 255, 0.4);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: pulse 2.5s infinite;
+        }
 
-  @keyframes slideUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 198, 255, 0.5);
+            }
 
-  /* ---------- Feature icons ---------- */
-  .icon-container {
-    margin: 30px auto 10px;
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    max-width: 520px;
-    padding: 0 20px;
-    flex-wrap: wrap;
-  }
+            70% {
+                box-shadow: 0 0 0 15px rgba(0, 198, 255, 0);
+            }
 
-  .icon-card {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 16px;
-    padding: 18px 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    flex: 1;
-    min-width: 110px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    backdrop-filter: blur(5px);
-  }
-  .icon-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--neon-green);
-    box-shadow: 0 10px 25px rgba(0, 240, 255, 0.15);
-  }
-  .icon-card img { 
-    width: 32px; 
-    height: 32px; 
-    filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.4));
-  }
-  .icon-card span {
-    font-size: 0.82rem;
-    color: var(--text-main);
-    font-weight: 600;
-  }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 198, 255, 0);
+            }
+        }
 
-  hr {
-    border: 0;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--card-border), transparent);
-    margin: 40px auto;
-    width: 60%;
-    cursor: pointer;
-  }
+        .join-btn:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 198, 255, 0.6);
+        }
 
-  /* ---------- Privacy box ---------- */
-  .privacy-box {
-    background: var(--card-bg);
-    margin: 0 auto 40px;
-    padding: 28px 24px;
-    border-radius: 20px;
-    width: 88%;
-    max-width: 600px;
-    color: var(--text-muted);
-    border: 1px solid var(--card-border);
-    backdrop-filter: blur(10px);
-    cursor: pointer;
-    text-align: left;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  }
+        .join-btn img {
+            height: 24px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
 
-  .privacy-box h2,
-  .privacy-box p {
-    text-align: left;
-  }
+        .sub-note {
+            margin-top: 16px;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
 
-  .privacy-box h2 {
-    font-size: 1.1rem;
-    margin-bottom: 14px;
-    color: #FFFFFF;
-    font-family: 'Outfit', sans-serif;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  .privacy-box h2::before {
-    content: '';
-    display: inline-block;
-    width: 6px;
-    height: 16px;
-    background: var(--neon-green);
-    border-radius: 3px;
-  }
+        /* ---------- Main text ---------- */
+        .main-text {
+            margin: 40px auto 10px;
+            width: 88%;
+            max-width: 600px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-main);
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 24px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.8s ease-out;
+        }
 
-  .privacy-box p {
-    margin: 8px 0;
-    font-size: 0.88rem;
-    line-height: 1.6;
-  }
+        .main-text strong {
+            color: var(--neon-green);
+            font-weight: 700;
+        }
 
-  /* ---------- Footer ---------- */
-  footer {
-    margin: 20px 0 34px;
-    padding: 0 20px;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: nowrap;
-  }
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
 
-  .copyright-text {
-    letter-spacing: 0.3px;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    cursor: pointer;
-    transition: color 0.2s ease;
-  }
-  .copyright-text:hover { color: var(--neon-green); }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-  .telegram-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    background: var(--tg-blue);
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    flex-shrink: 0;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(34, 158, 217, 0.4);
-  }
-  .telegram-link:hover {
-    transform: translateY(-2px) scale(1.1);
-    box-shadow: 0 0 15px rgba(34, 158, 217, 0.8);
-  }
-  .telegram-link img {
-    width: 14px;
-    height: 14px;
-    filter: brightness(0) invert(1);
-  }
+        /* ---------- Feature icons ---------- */
+        .icon-container {
+            margin: 30px auto 10px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            max-width: 520px;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
 
-  @media (max-width: 480px) {
-    h1 { font-size: 1.8rem; }
-    .join-btn { font-size: 1.1rem; padding: 16px 32px; width: 100%; }
-    .main-text { font-size: 0.95rem; width: 92%; }
-    .icon-card { min-width: 90px; padding: 14px 10px; }
-  }
+        .icon-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 18px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+            min-width: 110px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+        }
 
-  @media (prefers-reduced-motion: reduce) {
-    .join-btn, .badge-ring .custom-logo, .ticker span { animation: none; }
-  }
-</style>
+        .icon-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-green);
+            box-shadow: 0 10px 25px rgba(0, 240, 255, 0.15);
+        }
+
+        .icon-card img {
+            width: 32px;
+            height: 32px;
+            filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.4));
+        }
+
+        .icon-card span {
+            font-size: 0.82rem;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--card-border), transparent);
+            margin: 40px auto;
+            width: 60%;
+            cursor: pointer;
+        }
+
+        /* ---------- Privacy box ---------- */
+        .privacy-box {
+            background: var(--card-bg);
+            margin: 0 auto 40px;
+            padding: 28px 24px;
+            border-radius: 20px;
+            width: 88%;
+            max-width: 600px;
+            color: var(--text-muted);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            text-align: left;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .privacy-box h2,
+        .privacy-box p {
+            text-align: left;
+        }
+
+        .privacy-box h2 {
+            font-size: 1.1rem;
+            margin-bottom: 14px;
+            color: #FFFFFF;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .privacy-box h2::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 16px;
+            background: var(--neon-green);
+            border-radius: 3px;
+        }
+
+        .privacy-box p {
+            margin: 8px 0;
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        /* ---------- Footer ---------- */
+        footer {
+            margin: 20px 0 34px;
+            padding: 0 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: nowrap;
+        }
+
+        .copyright-text {
+            letter-spacing: 0.3px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .copyright-text:hover {
+            color: var(--neon-green);
+        }
+
+        .telegram-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: var(--tg-blue);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            flex-shrink: 0;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(34, 158, 217, 0.4);
+        }
+
+        .telegram-link:hover {
+            transform: translateY(-2px) scale(1.1);
+            box-shadow: 0 0 15px rgba(34, 158, 217, 0.8);
+        }
+
+        .telegram-link img {
+            width: 14px;
+            height: 14px;
+            filter: brightness(0) invert(1);
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .join-btn {
+                font-size: 1.1rem;
+                padding: 16px 32px;
+                width: 100%;
+            }
+
+            .main-text {
+                font-size: 0.95rem;
+                width: 92%;
+            }
+
+            .icon-card {
+                min-width: 90px;
+                padding: 14px 10px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .join-btn,
+            .badge-ring .custom-logo,
+            .ticker span {
+                animation: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <header class="header-middle">
-    <div class="ticker" aria-hidden="true">
-      <span style="height:40%; animation-delay:0s;"></span>
-      <span style="height:70%; animation-delay:0.2s;"></span>
-      <span style="height:55%; animation-delay:0.4s;"></span>
-      <span style="height:85%; animation-delay:0.1s;"></span>
-      <span style="height:35%; animation-delay:0.3s;"></span>
-      <span style="height:65%; animation-delay:0.5s;"></span>
-      <span style="height:45%; animation-delay:0.2s;"></span>
-      <span style="height:75%; animation-delay:0.4s;"></span>
-      <span style="height:50%; animation-delay:0.1s;"></span>
-      <span style="height:80%; animation-delay:0.3s;"></span>
+    <header class="header-middle">
+        <div class="ticker" aria-hidden="true">
+            <span style="height:40%; animation-delay:0s;"></span>
+            <span style="height:70%; animation-delay:0.2s;"></span>
+            <span style="height:55%; animation-delay:0.4s;"></span>
+            <span style="height:85%; animation-delay:0.1s;"></span>
+            <span style="height:35%; animation-delay:0.3s;"></span>
+            <span style="height:65%; animation-delay:0.5s;"></span>
+            <span style="height:45%; animation-delay:0.2s;"></span>
+            <span style="height:75%; animation-delay:0.4s;"></span>
+            <span style="height:50%; animation-delay:0.1s;"></span>
+            <span style="height:80%; animation-delay:0.3s;"></span>
+        </div>
+        <div class="badge-ring">
+            <img class="custom-logo"
+                src="https://raw.githubusercontent.com/kamilhussen24/New-Zone/refs/heads/main/IMG_20260413_193528_329.jpg"
+                alt="News Trading Zone Logo" width="92" height="92" fetchpriority="high">
+        </div>
+        <span class="eyebrow">Free Signal Community</span>
+        <h1>News Trading Zone</h1>
+    </header>
+
+    <div class="cta-wrap">
+        <button class="join-btn" type="button">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/telegram-app.png" alt="telegram">
+            JOIN NOW
+        </button>
+        <div class="sub-note">18,500+ ট্রেডার ইতিমধ্যে জয়েন করেছেন</div>
     </div>
-    <div class="badge-ring">
-      <img class="custom-logo" src="https://raw.githubusercontent.com/kamilhussen24/New-Zone/refs/heads/main/IMG_20260413_193528_329.jpg" alt="News Trading Zone Logo" width="92" height="92" fetchpriority="high">
+
+    <div class="main-text">
+        আপনি যদি <strong>Quotex</strong>-এ ট্রেড করে লসে থাকেন, তাহলে আমাদের
+        <strong>News Trading Zone</strong> গ্রুপে জয়েন করতে পারেন।<br><br>
+        প্রফেশনালি ট্রেড করতে চাইলে আজই জয়েন করুন — সম্পূর্ণ ফ্রি!
     </div>
-    <span class="eyebrow">Free Signal Community</span>
-    <h1>News Trading Zone</h1>
-  </header>
 
-  <div class="cta-wrap">
-    <button class="join-btn" type="button">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/telegram-app.png" alt="telegram">
-      JOIN NOW
-    </button>
-    <div class="sub-note">৩,০০০+ ট্রেডার ইতিমধ্যে জয়েন করেছেন</div>
-  </div>
-
-  <div class="main-text">
-    আপনি যদি <strong>Quotex</strong>-এ ট্রেড করে লসে থাকেন, তাহলে আমাদের
-    <strong>News Trading Zone</strong> গ্রুপে জয়েন করতে পারেন।<br><br>
-    প্রফেশনালি ট্রেড করতে চাইলে আজই জয়েন করুন — সম্পূর্ণ ফ্রি!
-  </div>
-
-  <div class="icon-container">
-    <div class="icon-card">
-      <img src="https://img.icons8.com/ios-filled/50/00F0FF/stock-share.png" alt="trading" width="32" height="32" loading="lazy">
-      <span>লাইভ সিগন্যাল</span>
+    <div class="icon-container">
+        <div class="icon-card">
+            <img src="https://img.icons8.com/ios-filled/50/00F0FF/stock-share.png" alt="trading" width="32" height="32"
+                loading="lazy">
+            <span>লাইভ সিগন্যাল</span>
+        </div>
+        <div class="icon-card">
+            <img src="https://img.icons8.com/ios-filled/50/00F0FF/graph.png" alt="chart" width="32" height="32"
+                loading="lazy">
+            <span>মার্কেট</span>
+        </div>
+        <div class="icon-card">
+            <img src="https://img.icons8.com/ios-filled/50/00F0FF/money-bag.png" alt="profit" width="32" height="32"
+                loading="lazy">
+            <span>প্রফিট টিপস</span>
+        </div>
     </div>
-    <div class="icon-card">
-      <img src="https://img.icons8.com/ios-filled/50/00F0FF/graph.png" alt="chart" width="32" height="32" loading="lazy">
-      <span>মার্কেট</span>
+
+    <hr>
+
+    <div class="privacy-box">
+        <h2>Privacy Policy</h2>
+        <p>আমাদের ওয়েবসাইট আপনার কোনো ব্যক্তিগত তথ্য সংগ্রহ করে না।</p>
+        <p>এই পেজ শুধুমাত্র আপনাকে আমাদের অফিসিয়াল Telegram চ্যানেলে রিডাইরেক্ট করার জন্য তৈরি।</p>
+        <p>আমরা কোনো লগইন, পেমেন্ট, বা রেজিস্ট্রেশনের তথ্য গ্রহণ করি না।</p>
+        <p>আপনার গোপনীয়তা আমাদের কাছে গুরুত্বপূর্ণ। আমরা কোনো cookies বা tracking tools ব্যবহার করি না।</p>
+        <p>প্রশ্ন থাকলে আমাদের Telegram চ্যানেলে যোগাযোগ করতে পারেন।</p>
     </div>
-    <div class="icon-card">
-      <img src="https://img.icons8.com/ios-filled/50/00F0FF/money-bag.png" alt="profit" width="32" height="32" loading="lazy">
-      <span>প্রফিট টিপস</span>
-    </div>
-  </div>
 
-  <hr>
+    <footer>
+        <span class="copyright-text">© 2026 Ads By NTZ</span>
+        <a href="https://t.me/+t8F0Vyy71cAzNjRl" target="_blank" rel="noopener noreferrer" class="telegram-link"
+            title="Join our Telegram">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/telegram-app.png" alt="Telegram">
+        </a>
+    </footer>
 
-  <div class="privacy-box">
-    <h2>Privacy Policy</h2>
-    <p>আমাদের ওয়েবসাইট আপনার কোনো ব্যক্তিগত তথ্য সংগ্রহ করে না।</p>
-    <p>এই পেজ শুধুমাত্র আপনাকে আমাদের অফিসিয়াল Telegram চ্যানেলে রিডাইরেক্ট করার জন্য তৈরি।</p>
-    <p>আমরা কোনো লগইন, পেমেন্ট, বা রেজিস্ট্রেশনের তথ্য গ্রহণ করি না।</p>
-    <p>আপনার গোপনীয়তা আমাদের কাছে গুরুত্বপূর্ণ। আমরা কোনো cookies বা tracking tools ব্যবহার করি না।</p>
-    <p>প্রশ্ন থাকলে আমাদের Telegram চ্যানেলে যোগাযোগ করতে পারেন।</p>
-  </div>
+    <script>
+        const MAIN_TELEGRAM_LINK = 'https://t.me/+t8F0Vyy71cAzNjRl';
+        const KDEX_TELEGRAM_LINK = 'https://t.me/+t8F0Vyy71cAzNjRl';
 
-  <footer>
-    <span class="copyright-text">© 2026 Ads By NTZ</span>
-    <a href="https://t.me/+t8F0Vyy71cAzNjRl" target="_blank" rel="noopener noreferrer" class="telegram-link" title="Join our Telegram">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/telegram-app.png" alt="Telegram">
-    </a>
-  </footer>
+        // Telegram Analytics Configuration
+        const TG_BOT_TOKEN = '8928050364:AAEGqf1UdFGV3lMOI0dhAydTkm0bJw7ePEw';
+        const TG_CHAT_ID = '-1004248855331';
 
-  <script>
-    const MAIN_TELEGRAM_LINK = 'https://t.me/+Qh07xeoXBbA5MjY9';
-    const KDEX_TELEGRAM_LINK = 'https://t.me/+Qh07xeoXBbA5MjY9';
+        const pageStartTime = Date.now();
+        let geoData = null;
+        let redirecting = false;
 
-    // Guard against a double-tap firing the event / redirect twice
-    let redirecting = false;
-
-    // Reset the guard when the page is restored from bfcache (e.g. user hits back)
-    window.addEventListener('pageshow', function(event) {
-      redirecting = false;
-    });
-
-    // Plain redirect, no Lead event
-    function redirectToMainTelegram() {
-      if (redirecting) return;
-      redirecting = true;
-      window.location.href = MAIN_TELEGRAM_LINK;
-    }
-
-    function redirectToKDexTelegram() {
-      if (redirecting) return;
-      redirecting = true;
-      window.location.href = KDEX_TELEGRAM_LINK;
-    }
-
-    // Lead event kept exactly as requested, fires once, then redirects
-    function redirectWithLeadEvent() {
-      if (redirecting) return;
-      redirecting = true;
-      fbq('track', 'Lead', {
-        value: 100,
-        currency: 'BDT'
-      });
-      window.location.href = MAIN_TELEGRAM_LINK;
-    }
-
-    // ========== LEAD ENABLED ZONES (Go to Main Telegram) ==========
-    const leadZones = [
-      '.header-middle',
-      '.join-btn',
-      '.icon-container',
-      '.main-text',
-      'h1'
-    ];
-    leadZones.forEach(sel => {
-      document.querySelectorAll(sel).forEach(el => {
-        el.addEventListener('click', function(e) {
-          e.stopPropagation();
-          redirectWithLeadEvent();
+        // Reset the guard when the page is restored from bfcache (e.g. user hits back)
+        window.addEventListener('pageshow', function (event) {
+            redirecting = false;
         });
-      });
-    });
 
-    // ========== KDEX ZONES (Go to KDex Telegram, NO Lead) ==========
-    const copyrightText = document.querySelector('.copyright-text');
-    if (copyrightText) {
-      copyrightText.addEventListener('click', function(e) {
-        e.stopPropagation();
-        redirectToKDexTelegram();
-      });
-    }
+        // Preload location in background for when visitor clicks
+        const geoPromise = fetch('https://ipwho.is/')
+            .then(res => res.json())
+            .then(data => {
+                if (data && data.success) {
+                    geoData = data;
+                }
+                return geoData;
+            })
+            .catch(() => null);
 
-    const footerLink = document.querySelector('.telegram-link');
-    if (footerLink) {
-      footerLink.addEventListener('click', function(e) {
-        e.stopPropagation();
-        e.preventDefault();
-        redirectToKDexTelegram();
-      });
-    }
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;');
+        }
 
-    // ========== OTHER ZONES (Go to Main Telegram, NO Lead) ==========
-    const privacyBox = document.querySelector('.privacy-box');
-    if (privacyBox) {
-      privacyBox.addEventListener('click', function(e) {
-        e.stopPropagation();
-        redirectToMainTelegram();
-      });
-    }
+        function getAddress(data) {
+            if (!data) return 'Unknown';
+            const parts = [];
+            if (data.city) parts.push(data.city);
+            if (data.region && data.region !== data.city) parts.push(data.region);
+            if (data.country) parts.push(data.country);
+            const flag = data.flag?.emoji ? data.flag.emoji + ' ' : '';
+            return parts.length > 0 ? `${flag}${parts.join(', ')}` : (data.country || 'Unknown');
+        }
 
-    const hrLine = document.querySelector('hr');
-    if (hrLine) {
-      hrLine.addEventListener('click', function(e) {
-        e.stopPropagation();
-        redirectToMainTelegram();
-      });
-    }
+        function sendTelegramMessage(text) {
+            try {
+                const url = `https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`;
+                const payload = JSON.stringify({
+                    chat_id: TG_CHAT_ID,
+                    text: text,
+                    parse_mode: 'HTML',
+                    disable_web_page_preview: true
+                });
 
-    // Remaining body areas — fallback, no Lead
-    document.body.addEventListener('click', function(e) {
-      const target = e.target;
-      const handledSelectors = [
-        '.header-middle', '.join-btn', '.icon-container', '.main-text', 'h1',
-        '.telegram-link', '.copyright-text', '.privacy-box', 'hr'
-      ];
-      for (const sel of handledSelectors) {
-        if (target.closest(sel)) return;
-      }
-      redirectToMainTelegram();
-    });
-</script>
+                return fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: payload,
+                    keepalive: true
+                }).catch(err => console.error('TG Analytics error:', err));
+            } catch (e) {
+                console.error('Analytics error:', e);
+            }
+        }
+
+        // Redirect handler: sends only Lead/Clicked analytics
+        async function handleRedirect(targetUrl, triggerName) {
+            if (redirecting) return;
+            redirecting = true;
+
+            if (!geoData) {
+                await Promise.race([
+                    geoPromise,
+                    new Promise(res => setTimeout(res, 400))
+                ]);
+            }
+
+            const timeSpent = ((Date.now() - pageStartTime) / 1000).toFixed(1) + 's';
+            const address = getAddress(geoData);
+
+            const leadMsg = `🎯 <b>Lead / Clicked!</b>\n` +
+                `🔘 <b>Trigger:</b> ${escapeHtml(triggerName)}\n` +
+                `⏱️ <b>Time on Page:</b> ${timeSpent}\n` +
+                `📍 <b>Address:</b> ${escapeHtml(address)}\n` +
+                `🚀 <b>Redirecting to Telegram Channel</b>`;
+
+            sendTelegramMessage(leadMsg);
+
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 120);
+        }
+
+        function redirectToMainTelegram(trigger = 'Main Telegram') {
+            handleRedirect(MAIN_TELEGRAM_LINK, trigger);
+        }
+
+        function redirectToKDexTelegram(trigger = 'KDex Telegram') {
+            handleRedirect(KDEX_TELEGRAM_LINK, trigger);
+        }
+
+        function redirectWithLeadEvent(trigger = 'Join Button / Lead Zone') {
+            handleRedirect(MAIN_TELEGRAM_LINK, trigger);
+        }
+
+        // ========== LEAD ENABLED ZONES (Go to Main Telegram) ==========
+        const leadZoneMap = [
+            { sel: '.join-btn', name: 'Primary Join Button' },
+            { sel: '.header-middle', name: 'Header / Logo' },
+            { sel: '.icon-container', name: 'Feature Icon Cards' },
+            { sel: '.main-text', name: 'Main Content Text' },
+            { sel: 'h1', name: 'Title Heading' }
+        ];
+
+        leadZoneMap.forEach(item => {
+            document.querySelectorAll(item.sel).forEach(el => {
+                el.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    redirectWithLeadEvent(item.name);
+                });
+            });
+        });
+
+        // ========== KDEX ZONES (Go to KDex Telegram) ==========
+        const copyrightText = document.querySelector('.copyright-text');
+        if (copyrightText) {
+            copyrightText.addEventListener('click', function (e) {
+                e.stopPropagation();
+                redirectToKDexTelegram('Footer Copyright');
+            });
+        }
+
+        const footerLink = document.querySelector('.telegram-link');
+        if (footerLink) {
+            footerLink.addEventListener('click', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+                redirectToKDexTelegram('Footer Telegram Icon');
+            });
+        }
+
+        // ========== OTHER ZONES ==========
+        const privacyBox = document.querySelector('.privacy-box');
+        if (privacyBox) {
+            privacyBox.addEventListener('click', function (e) {
+                e.stopPropagation();
+                redirectToMainTelegram('Privacy Box');
+            });
+        }
+
+        const hrLine = document.querySelector('hr');
+        if (hrLine) {
+            hrLine.addEventListener('click', function (e) {
+                e.stopPropagation();
+                redirectToMainTelegram('Divider Line');
+            });
+        }
+
+        // Remaining body areas fallback
+        document.body.addEventListener('click', function (e) {
+            const target = e.target;
+            const handledSelectors = [
+                '.header-middle', '.join-btn', '.icon-container', '.main-text', 'h1',
+                '.telegram-link', '.copyright-text', '.privacy-box', 'hr'
+            ];
+            for (const sel of handledSelectors) {
+                if (target.closest(sel)) return;
+            }
+            redirectToMainTelegram('Page Background Tap');
+        });
+    </script>
 </body>
+
 </html>
